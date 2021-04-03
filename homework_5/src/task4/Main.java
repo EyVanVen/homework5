@@ -8,10 +8,7 @@ public class Main {
         int max = 0;
         int min = 21;
 
-        ArrayList numList = new ArrayList(10);
-        Iterator itr = numList.iterator();
-
-        Random rand = new Random(10);
+        ArrayList <Integer> numList = new ArrayList<>(10);
 
         for (int i = 0; i != 10; i++){
             numList.add(i, (int)(10 + Math.random()*11));
@@ -20,26 +17,30 @@ public class Main {
         System.out.println("Old list: " + numList);
 
         for (int i = 0; i != 10; i++){
-            if ((int) numList.get(i) > max){
-                max = (int) numList.get(i);
+            if (numList.get(i) > max){
+                max = numList.get(i);
             }
         }
 
         for (int i = 0; i != 10; i++){
-            if ((int) numList.get(i) < min){
-                min = (int) numList.get(i);
+            if (numList.get(i) < min){
+                min = numList.get(i);
             }
         }
         System.out.println("Maximum number: " + max);
         System.out.println("Minimum number: " + min);
 
-        while (itr.hasNext()){
-            int i = 0;
-            int temp = (int) numList.get(i) + 1;
+        Iterator <Integer> iterator = numList.iterator();
+
+        for(int i = 0;  i < numList.size(); i++) {
+            int temp = iterator.next() + 1;
             numList.set(i, temp);
-            System.out.println("New list: " + numList);
         }
 
+        while (iterator.hasNext()){
+            int integer = iterator.next();
+            System.out.println(integer);
+        }
         System.out.println("New list: " + numList);
     }
 }
