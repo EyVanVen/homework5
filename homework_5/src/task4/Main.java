@@ -36,11 +36,8 @@ public class Main {
             int temp = iterator.next() + 1;
             numList.set(i, temp);
         }
-
-        while (iterator.hasNext()){
-            int integer = iterator.next();
-            System.out.println(integer);
-        }
+        
         System.out.println("New list: " + numList);
     }
 }
+
